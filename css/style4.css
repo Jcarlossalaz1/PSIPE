@@ -1,0 +1,46 @@
+* {margin:0;padding:0}
+.inner_copy {border:0;color:#f00;float:left;width:50% !important;margin:-100% 0 0 0;overflow:hidden;line-height:0;padding:0;font-size:11px}
+.fleft {float:left}
+.fright  {float:right}
+.fcenter {float:none;margin:0 auto;width:96%}
+.fclear {clear:both}
+body {font-family:Arial,Helvetica,sans-serif;font-size:12px;background:url(../images/bodyBackground.jpg) left top repeat-x;margin:0;padding:0;text-align:center;color:#000}
+a {color:#991f2b;text-decoration:underline}
+a:hover {color:#000;text-decoration:none;font-weight:bold}
+h1 {color:#991f2b}
+h4 {color:#7f7c19}
+.headerBody h2 {color:#fff;padding:20px;font-size:48px}
+.headerBody p {color:#fff;padding:0 20px}
+#container {width:780px;margin:0 auto;text-align:left;} 
+#header {background:#ddd} 
+#header h1 {margin:0;padding:10px 0;}
+#mainMenu {height:92px;width:780px;background:url(../images/menuBackground.jpg) left top no-repeat}
+#mainMenu #menu {padding:25px 40px 0 120px}
+#mainMenu .buttonPosition {background-position:-20px 35px}
+#mainMenu ul {list-style:none;margin:0;padding:0}
+#mainMenu li {float:left;width:100px;margin:0;padding:0;text-align:center}
+#mainMenu li a {display:block;padding:5px 10px;height:100%;color:#FFF;text-decoration:none;border-right:1px solid #FFF}
+#mainMenu li a:hover, li a:focus, li a:active {background-position:-150px 0}
+#mainMenu #menu a {background:url(../images/bg.jpg) repeat -20px 35px}
+.headerBody {background:url(../images/upp.jpg) left top no-repeat;height:400px;width:780px}
+#mainContent {margin:15px 0 0 230px;padding:0 20px;} 
+#footer {padding:0 10px 0 20px;background:url(../images/footerBackground.png) left top no-repeat;height:73px;width:780px;margin-bottom:10px} 
+#footer p {color:#fff;padding:11px}
+#footer a {color:#fff}
+#footer a:hover {color:#fff;font-weight:normal}
+.clearfloat {clear:both;height:0;font-size:1px;line-height:0}
+#sidebar1 {float:left;width:215px;padding:15px 0;}
+#sidebar1 p {margin-left:10px;margin-right:10px}
+h3 {margin:0;padding:0}
+#sidebar1 h3 {width:190px;height:29px;font-size:14px;font-weight:bold;padding-left:25px;padding-top:10px;color:#fff;background:url(../images/title.png) no-repeat}
+.title_back ul {margin:0;padding:0}
+#sidebar1 ul {list-style:none;margin-bottom:10px;padding-top:10px}
+#sidebar1 .title_back {background:url(../images/title_back.png) no-repeat top}
+#sidebar1 li {padding:7px;padding-left:20px}
+.bot {padding:10px}
+#calendar {padding:20px 10px 20px 10px}
+#calendar table {width:100%;text-align:center}
+#calendar tbody td {border:1px solid #F1F1F1}
+#calendar #prev {text-align:left}
+#calendar tfoot a {text-decoration:none;font-weight:bold}
+#calendar #now {background:#696969;border:1px solid #f00;font-weight:bold;color:#fff}
