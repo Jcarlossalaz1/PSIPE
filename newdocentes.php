@@ -5,8 +5,8 @@ session_start();
 //si no se ha hecho la sesion nos regresará a login.php
 if(!isset($_SESSION['nempleado'])) 
 {
-  header('Location: login3.php'); 
-  exit();
+    session_destroy();
+    header('Location: index.html'); 
 }
 ?> 
 

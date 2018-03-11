@@ -1,6 +1,5 @@
 <?php
-mysql_connect('localhost','lizbeth','selfpass2015')or die ('Ha fallado la conexión: '.mysql_error());
-mysql_select_db('lizbeth_upvm')or die ('Error al seleccionar la Base de Datos: '.mysql_error());
+$mysqli=new mysqli('localhost','lizbeth','selfpass2015','lizbeth_upvm')or die ('Ha fallado la conexión: '.mysql_error());
 $matricula = $_POST["matricula"];   
 $password = $_POST["password"];
 $grup=$_POST["group"];
@@ -9,18 +8,19 @@ $grup=$_POST["group"];
 /*Consulta de mysql con la que indicamos que necesitamos que seleccione
 **solo los campos que tenga como nombre_administrador el que el formulario
 **le ha enviado*/
-$result = mysql_query("SELECT * FROM alumnos WHERE matricula = '$matricula'");
+$result = $mysqli->query("SELECT * FROM alumnos WHERE matricula = '$matricula'");
 
 //Validamos si el nombre del administrador existe en la base de datos o es correcto
-if($row = mysql_fetch_array($result))
+if($row = $result->fetch_object())
 {     
 //Si el usuario es correcto ahora validamos su contraseña
- if($row["password"] == $password)
+ if($row->password == $password)
  {
   //Creamos sesión
   session_start();  
   //Almacenamos el nombre de usuario en una variable de sesión usuario
   $_SESSION['matricula'] = $matricula;  
+  $_SESSION['NOMBRE']= $row->nombre." ".$row->appat." ".$row->apmat;
   //Redireccionamos a la pagina: index.php
   header("Location: confidencialidad.php");  
  }
@@ -30,7 +30,7 @@ if($row = mysql_fetch_array($result))
   ?>
    <script languaje="javascript">
     alert("Contrasena Incorrecta");
-    location.href = "login.php";
+    location.href = "index.html";
    </script>
   <?
             
@@ -42,7 +42,7 @@ else
 ?>
  <script languaje="javascript">
   alert("El nombre de usuario es incorrecto!");
-  location.href = "login.php";
+  location.href = "index.html";
  </script>
 <?   
         

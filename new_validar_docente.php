@@ -5,11 +5,7 @@
 **Nombre de usuario: root.
 **Contraseña de usuario: root.
 **Si la conexion fallara mandamos un msj 'ha fallado la conexion'**/
-mysql_connect('localhost','lizbeth','selfpass2015')or die ('Ha fallado la conexión: '.mysql_error());
-
-/*Luego hacemos la conexión a la base de datos. 
-**De igual manera mandamos un msj si hay algun error*/
-mysql_select_db('lizbeth_upvm')or die ('Error al seleccionar la Base de Datos: '.mysql_error());
+$mysqli=new mysqli('localhost','lizbeth','selfpass2015','lizbeth_upvm')or die ('Ha fallado la conexión: '.mysql_error());
  
 /*caturamos nuestros datos que fueron enviados desde el formulario mediante el metodo POST
 **y los almacenamos en variables.*/
@@ -19,13 +15,13 @@ $password = $_POST["password"];
 /*Consulta de mysql con la que indicamos que necesitamos que seleccione
 **solo los campos que tenga como nombre_administrador el que el formulario
 **le ha enviado*/
-$result = mysql_query("SELECT * FROM docentes WHERE nempleado = '$nempleado'");
+$result = $mysqli->query("SELECT * FROM docentes WHERE nempleado = '$nempleado'");
 
 //Validamos si el nombre del administrador existe en la base de datos o es correcto
-if($row = mysql_fetch_array($result))
+if($row = $result->fetch_object())
 {     
 //Si el usuario es correcto ahora validamos su contraseña
- if($row["password"] == $password)
+ if($row->password == $password)
  {
   //Creamos sesión
   session_start();  
@@ -40,7 +36,7 @@ if($row = mysql_fetch_array($result))
   ?>
    <script languaje="javascript">
     alert("Contrasena Incorrecta");
-    location.href = "index.php";
+    location.href = "index.html";
    </script>
   <?
             
@@ -52,7 +48,7 @@ else
 ?>
  <script languaje="javascript">
   alert("El nombre de usuario es incorrecto!");
-  location.href = "index.php";
+  location.href = "index.html";
  </script>
 <?   
         
