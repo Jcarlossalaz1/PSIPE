@@ -5,8 +5,8 @@ session_start();
 //si no se ha hecho la sesion nos regresará a login.php
 if(!isset($_SESSION['matricula'])) 
 {
-  header('Location: login.php'); 
-  exit();
+    session_destroy();
+    header('Location: index.html'); 
 }
 
 $matricula=$_SESSION['matricula'];
